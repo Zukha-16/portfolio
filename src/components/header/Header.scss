@@ -1,0 +1,205 @@
+@import '../../styles/variables.scss';
+
+.sticky__header {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: $headerBgColor;
+    color: $textColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid $borderColor;
+}
+
+.header__image {
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+
+    img {
+        max-width: 80%;
+        border: 10px solid $borderColor;
+        border-radius: 50%;
+    }
+
+    p {
+        margin-top: 1.2rem;
+        font-size: $authorName;
+        font-weight: 700;
+    }
+
+}
+
+.header__nav {
+    border-top: 1px solid $borderColor;
+    height: 60%;
+    width: 100%;
+    padding: 0.5rem;
+
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a.active {
+            background-color: $baseColor;
+            color: $textColor;
+        }
+
+        a {
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+            font-size: $headerLinks;
+            color: $headerLinksColor;
+            padding: .5rem 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            transition: all .5s;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                content: '';
+                background-color: rgba($baseColor, .5);
+                transition: all .5s ease;
+                z-index: -2;
+            }
+
+            &:hover {
+                color: $textColor;
+
+                &:before {
+
+                    width: 100%;
+                }
+            }
+        }
+
+
+
+    }
+}
+
+.header__bottom {
+    border-top: 1px solid $borderColor;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-bottom: 0.5rem;
+    }
+}
+
+.header__social__media {
+    height: 20%;
+    position: fixed;
+
+    bottom: 2rem;
+    right: 2rem;
+    margin: auto 0;
+
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        li a {
+            color: $textColor;
+            font-size: $sideSocialLinks;
+            transition: all .5s;
+            z-index: 2;
+            position: relative;
+        }
+
+        li.instagram a::before,
+        li.telegram a::before,
+        li.whatsapp a::before,
+        li.github a::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 180%;
+            height: 140%;
+            opacity: 0;
+            border-radius: 50%;
+            transform: translate(-22%, -19%);
+            transition: all .5s ease;
+
+        }
+
+        li.instagram a::before {
+            background: $instagramBgColor;
+        }
+
+        li.telegram a::before {
+            background-color: $telegramColor;
+        }
+
+        li.whatsapp a::before {
+            background-color: $whatsappColor;
+        }
+
+        li.github a::before {
+            background-color: $githubColor;
+        }
+
+        li.instagram a:hover::before,
+        li.telegram a:hover::before,
+        li.whatsapp a:hover::before,
+        li.github a:hover::before {
+            opacity: 1;
+        }
+
+    }
+}
+
+.header__languages {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    margin: auto 0;
+    color: $textColor;
+    display: flex;
+    align-items: center;
+
+
+    ul {
+        display: flex;
+        padding-right: 1rem;
+
+        li {
+            padding: 0.5rem;
+            transition: all .5s ease;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba($baseColor, .5);
+            }
+
+        }
+
+        li.active {
+            text-decoration: underline;
+        }
+    }
+}

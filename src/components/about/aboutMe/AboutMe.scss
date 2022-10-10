@@ -1,0 +1,133 @@
+@import '../../../styles/variables.scss';
+
+
+.about_me-description {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    max-width: 400px;
+  }
+
+
+  .about_me-who_am_i {
+    width: 68%;
+    text-align: left;
+
+    h3 {
+      color: $baseColor;
+      font-size: $subTitle;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: $smallTitle;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.about_me-summary {
+  border-top: 1px solid rgba(168, 168, 168, 0.5);
+  padding-top: 1rem;
+  display: flex;
+  width: 100%;
+
+  .about_me-summary-inside {
+    width: 50%;
+
+    ul {
+      li {
+        font-size: $aboutSummary;
+        padding-top: 1rem;
+      }
+    }
+
+    span {
+      margin-left: .5rem;
+      color: rgba($textColor, .65);
+    }
+
+    .span_email {
+      color: $baseColor;
+    }
+  }
+
+
+}
+
+.about_me-summary_cv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  margin-top: 3rem;
+
+  button {
+    background: none;
+    border: 2px solid $baseColor;
+    padding: 1rem 2rem;
+    color: $baseColor;
+    transition: all 0.5s;
+    font-size: $downloadBtn;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 0 2rem $baseColor;
+      color: $textColor;
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 1.5rem;
+      transition: all .5s ease;
+
+      a {
+        color: $textColor;
+        font-size: $aboutSocialLinks;
+      }
+
+      svg {
+        transition: all .5s ease;
+      }
+
+      &:hover svg {
+        scale: 1.8;
+        rotate: 360deg;
+      }
+
+      &.instagram:hover svg {
+        color: $instagramColor;
+      }
+
+      &.telegram:hover svg {
+        color: $telegramColor;
+      }
+
+      &.whatsapp:hover svg {
+        color: $whatsappColor;
+      }
+
+      &.github:hover svg {
+        color: $githubColor;
+      }
+    }
+  }
+}

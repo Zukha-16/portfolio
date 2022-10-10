@@ -1,0 +1,130 @@
+{
+    "header-en": [
+        {
+            "id": "/",
+            "linkName": "home"
+        },
+        {
+            "id": "/about",
+            "linkName": "about"
+        },
+        {
+            "id": "/resume",
+            "linkName": "resume"
+        },
+        {
+            "id": "/portfolio",
+            "linkName": "portfolio"
+        },
+        {
+            "id": "/contact",
+            "linkName": "contact"
+        }
+    ],
+    "home-en": [
+        {
+            "id": 1,
+            "text": "Welcome"
+        },
+        {
+            "id": 2,
+            "text": [
+                "Zukhriddin Mekhrullaev",
+                "Web Developer",
+                "Freelancer",
+                "Web Designer"
+            ]
+        },
+        {
+            "id": 3,
+            "text": "I live and create in London, UK."
+        },
+        {
+            "id": 4,
+            "text": "Hire me"
+        }
+    ],
+    "header-rus": [
+        {
+            "id": "/",
+            "linkName": "профиль"
+        },
+        {
+            "id": "/about",
+            "linkName": "кто я?"
+        },
+        {
+            "id": "/resume",
+            "linkName": "резюме"
+        },
+        {
+            "id": "/portfolio",
+            "linkName": "портфолио"
+        },
+        {
+            "id": "/contact",
+            "linkName": "контакт"
+        }
+    ],
+    "home-rus": [
+        {
+            "id": 1,
+            "text": "Добро пожаловать"
+        },
+        {
+            "id": 2,
+            "text": [
+                "Зухриддин Мехруллаев",
+                "Веб Разработчик",
+                "Фрилансер",
+                "Веб Дизайнер"
+            ]
+        },
+        {
+            "id": 3,
+            "text": "Живу и творю в Лондоне, Великобритания."
+        },
+        {
+            "id": 4,
+            "text": "Связаться"
+        }
+    ],
+    "testimonials": [
+        {
+            "id": 1,
+            "name": "Selena Gomez",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+        },
+        {
+            "id": 2,
+            "name": "Justin Bieber",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+        },
+        {
+            "id": 3,
+            "name": "Rihanna",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa volupaccusantium aspernatur error?"
+        },
+        {
+            "id": 4,
+            "name": "Drake",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+        },
+        {
+            "id": 5,
+            "name": "Travis Scott",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+        },
+        {
+            "id": 6,
+            "name": " Kendel Jener",
+            "position": "super director",
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+        }
+    ]
+}

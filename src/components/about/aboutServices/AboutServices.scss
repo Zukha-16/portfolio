@@ -1,0 +1,34 @@
+@import '../../../styles/variables.scss';
+
+.about_sevrices{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    padding: 2rem;
+    width: 30%;
+    background-color: $servicesbgColor;
+    
+
+    svg {
+      font-size: $svgIconsInServices;
+      color: $baseColor;
+    }
+
+    h3 {
+      margin: 1rem 0;
+      font-size: $subTitle;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      color: rgba($textColor, .5);
+      line-height: 1.5;
+    }
+  }
+}
+.breaker{
+  margin-bottom: 3rem;
+}

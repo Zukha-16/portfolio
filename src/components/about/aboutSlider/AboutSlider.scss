@@ -1,0 +1,78 @@
+@import '../../../styles/variables.scss';
+
+.slider__container {
+  height: 100%;
+  padding: 0 1rem 3rem 1rem;
+}
+
+.testimonial {
+  position: relative;
+  background-color: rgb(25, 25, 25);
+}
+
+.testimonial:after {
+  content: ' ';
+  position: absolute;
+  right: 2rem;
+  bottom: -30px;
+  border: 25px solid;
+  border-color: rgb(25, 25, 25) rgb(25, 25, 25) transparent transparent;
+}
+
+.testimonial__content {
+  padding: 2rem 1rem;
+  line-height: 1.5rem;
+  p{
+    margin: 1rem 0;
+  }
+}
+
+.testimonial__content_person {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .testimonial__person_name {
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 4rem;
+      margin-right: 1rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      color: rgba($textColor, .5)
+    }
+  }
+}
+
+.quote__color {
+  font-size: 3rem;
+  color: $baseColor;
+}
+
+
+.slick-slider {
+  margin-bottom: 10rem;
+  
+
+  .slick-dots li button::before {
+    color: white;
+    font-size: 1rem;
+    margin-top: .5rem;
+  }
+
+  .slick-dots li.slick-active button::before {
+    color: white;
+  }
+}
+
+
+
+
+/* talk bubble contents */
