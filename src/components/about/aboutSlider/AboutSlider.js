@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { selectAll, fetchTestimonials } from "./testimonialsSlice";
 import Slider from "react-slick";
 import store from "../../../store";

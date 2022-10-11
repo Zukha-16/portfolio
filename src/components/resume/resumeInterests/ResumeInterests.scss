@@ -1,0 +1,44 @@
+@import '../../../styles/variables.scss';
+
+.interests {
+    display: flex;
+    justify-content: space-around;
+}
+
+.interests_info {
+    width: 22%;
+    text-align: center;
+    background-color: $servicesbgColor;
+    padding: 2rem 1rem;
+    transition: all .5s ease;
+
+    svg {
+        font-size: 7rem;
+        color: rgba($baseColor, .7);
+        transition: all .5s ease-in-out
+    }
+
+    h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    p {
+        margin-top: 1rem;
+        line-height: 1.2;
+        letter-spacing: .5px;
+    }
+
+    margin-bottom: 5rem;
+
+    &:hover {
+        svg {
+            color: $textColor;
+        }
+
+        scale: 1.2;
+        background-color:rgba($baseColor, .5);
+    }
+
+
+}

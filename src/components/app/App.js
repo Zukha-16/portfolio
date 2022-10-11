@@ -7,7 +7,7 @@ import RingLoader from "react-spinners/RingLoader";
 const Header = lazy(() => import("../header/Header"));
 const Home = lazy(() => import("../home/Home"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
-const Resume = lazy(() => import("../resume/Resume"));
+const ResumePage = lazy(() => import("../pages/ResumePage"));
 const Portfolio = lazy(() => import("../portfolio/Portfolio"));
 const Contact = lazy(() => import("../contact/Contact"));
 
@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/resume" element={<Resume />} />
+            <Route path="/resume" element={<ResumePage />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="*" element={<Page404 />} /> */}
