@@ -8,8 +8,8 @@ const Header = lazy(() => import("../header/Header"));
 const Home = lazy(() => import("../home/Home"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
 const ResumePage = lazy(() => import("../pages/ResumePage"));
-const Portfolio = lazy(() => import("../portfolio/Portfolio"));
-const Contact = lazy(() => import("../contact/Contact"));
+const PortfolioPage = lazy(() => import("../pages/PortfolioPage"));
+const ContactPage = lazy(() => import("../pages/ContactPage"));
 
 function App() {
   return (
@@ -31,8 +31,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/resume" element={<ResumePage />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             {/* <Route path="*" element={<Page404 />} /> */}
           </Routes>
         </Suspense>

@@ -1,0 +1,50 @@
+@import '../../styles/variables.scss';
+
+.portfolio {
+    display: flex;
+    justify-content: space-around;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.portfolio_info {
+    width: 30%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $servicesbgColor;
+    padding: 1rem;
+}
+
+.portfolio_img {
+    width: 100%;
+    min-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.449);
+
+    p {
+        line-height: 1.5;
+        letter-spacing: 1.2px;
+        font-size: 1.5rem;
+    }
+}
+
+.portfolio_description {
+    min-height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        line-height: 1.5;
+        letter-spacing: .8px;
+        font-size: $textSize - .1;
+        color: $textColor;
+    }
+}

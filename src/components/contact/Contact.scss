@@ -1,0 +1,68 @@
+@import '../../styles/variables.scss';
+
+.contact {
+    display: flex;
+
+    .contact_form {
+        width: 65%;
+
+    }
+
+    .contact_info {
+        width: 35%;
+        text-align: left;
+
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            letter-spacing: .8px;
+        }
+
+        .contact_info_wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+
+        .contact_info_inside {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 20%;
+                color: $baseColor;
+                font-size: 2rem;
+            }
+
+            div {
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                padding-left: 2rem;
+                margin-top: 1rem;
+                width: 80%;
+                text-align: left;
+                line-height: 1.2;
+
+
+                h3 {
+                    font-size: 1.2rem;
+                }
+                h4{
+                    
+                    font-size: 1.1rem;
+                    color: rgba($textColor, .5)
+                }
+            }
+        }
+    }
+}

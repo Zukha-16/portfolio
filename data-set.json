@@ -1,282 +1,291 @@
 {
-    "header-en": [
-        {
-            "id": "/",
-            "linkName": "home"
-        },
-        {
-            "id": "/about",
-            "linkName": "about"
-        },
-        {
-            "id": "/resume",
-            "linkName": "resume"
-        },
-        {
-            "id": "/portfolio",
-            "linkName": "portfolio"
-        },
-        {
-            "id": "/contact",
-            "linkName": "contact"
-        }
-    ],
-    "home-en": [
-        {
-            "id": 1,
-            "text": "Welcome"
-        },
-        {
-            "id": 2,
-            "text": [
-                "Zukhriddin Mekhrullaev",
-                "Web Developer",
-                "Freelancer",
-                "Web Designer"
-            ]
-        },
-        {
-            "id": 3,
-            "text": "I live and create in London, UK."
-        },
-        {
-            "id": 4,
-            "text": "Hire me"
-        }
-    ],
-    "header-rus": [
-        {
-            "id": "/",
-            "linkName": "профиль"
-        },
-        {
-            "id": "/about",
-            "linkName": "кто я?"
-        },
-        {
-            "id": "/resume",
-            "linkName": "резюме"
-        },
-        {
-            "id": "/portfolio",
-            "linkName": "портфолио"
-        },
-        {
-            "id": "/contact",
-            "linkName": "контакт"
-        }
-    ],
-    "home-rus": [
-        {
-            "id": 1,
-            "text": "Добро пожаловать"
-        },
-        {
-            "id": 2,
-            "text": [
-                "Зухриддин Мехруллаев",
-                "Веб Разработчик",
-                "Фрилансер",
-                "Веб Дизайнер"
-            ]
-        },
-        {
-            "id": 3,
-            "text": "Живу и творю в Лондоне, Великобритания."
-        },
-        {
-            "id": 4,
-            "text": "Связаться"
-        }
-    ],
-    "testimonials": [
-        {
-            "id": 1,
-            "name": "Selena Gomez",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
-        },
-        {
-            "id": 2,
-            "name": "Justin Bieber",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
-        },
-        {
-            "id": 3,
-            "name": "Rihanna",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa volupaccusantium aspernatur error?"
-        },
-        {
-            "id": 4,
-            "name": "Drake",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
-        },
-        {
-            "id": 5,
-            "name": "Travis Scott",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
-        },
-        {
-            "id": 6,
-            "name": " Kendel Jener",
-            "position": "super director",
-            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
-        }
-    ],
-    "education": [
-        {
-            "id": 1,
-            "name": "Diploma of Higher Education (DipHE)",
-            "location": "College of Law, Tashkent",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "September 2015",
-            "until": "September 2018"
-        },
-        {
-            "id": 2,
-            "name": "React/Redux full course",
-            "location": "Udemy, Online",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "March 2020",
-            "until": "January 2021"
-        },
-        {
-            "id": 3,
-            "name": "Bachelor's degree in Computing systems",
-            "location": "University of Ulster, London",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "January 2019",
-            "until": "September 2022"
-        }
-    ],
-    "experience": [
-        {
-            "id": 1,
-            "name": "Fron End Engineer",
-            "location": "Family business, Tashkent",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "2015",
-            "until": "2018"
-        },
-        {
-            "id": 2,
-            "name": "Web Developer",
-            "location": "Freelance, London",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "2020",
-            "until": "2022"
-        },
-        {
-            "id": 3,
-            "name": "UX/UI Designer, Web developer",
-            "location": "Portfolio project, London",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
-            "from": "2022",
-            "until": "2022"
-        }
-    ],
-    "languages": [
-        {
-            "id": 1,
-            "name": "English",
-            "level": 85,
-            "url": "./flags/ukFlag.png",
-            "greeting": "Hello, world!"
-        },
-        {
-            "id": 2,
-            "name": "Ukranian",
-            "level": 60,
-            "url": "./flags/ukrFlag.png",
-            "greeting": "Привіт Світ!"
-        },
-        {
-            "id": 3,
-            "name": "Uzbek",
-            "level": 100,
-            "url": "./flags/uzFlag.png",
-            "greeting": "Salom Dunyo!"
-        },
-        {
-            "id": 4,
-            "name": "Russian",
-            "level": 100,
-            "url": "./flags/rusFlag.png",
-            "greeting": "Привет, мир!"
-        }
-    ],
-    "skills": [
-        {
-            "id": 1,
-            "name": "HTML5",
-            "level": 90
-        },
-        {
-            "id": 2,
-            "name": "CSS/SASS",
-            "level": 90
-        },
-        {
-            "id": 3,
-            "name": "React JS",
-            "level": 80
-        },
-        {
-            "id": 4,
-            "name": "JavaScript",
-            "level": 90
-        },
-        {
-            "id": 5,
-            "name": "Node JS",
-            "level": 70
-        },
-        {
-            "id": 6,
-            "name": "REST API",
-            "level": 70
-        },
-        {
-            "id": 7,
-            "name": "Redux",
-            "level": 80
-        },
-        {
-            "id": 8,
-            "name": "Python",
-            "level": 70
-        },
-        {
-            "id": 9,
-            "name": "Django",
-            "level": 60
-        },
-        {
-            "id": 10,
-            "name": "SwiftUI",
-            "level": 60
-        }
-    ],
-    "interests": [
-        {
-            "id": 1,
-            "name": "Tennis"
-        },
-        {
-            "id": 2,
-            "name": "Driving"
-        },
-        {
-            "id": 3,
-            "name": "Camping"
-        },
-        {
-            "id": 4,
-            "name": "DIY"
-        }
-    ]
+  "header-en": [
+    {
+      "id": "/",
+      "linkName": "home"
+    },
+    {
+      "id": "/about",
+      "linkName": "about"
+    },
+    {
+      "id": "/resume",
+      "linkName": "resume"
+    },
+    {
+      "id": "/portfolio",
+      "linkName": "portfolio"
+    },
+    {
+      "id": "/contact",
+      "linkName": "contact"
+    }
+  ],
+  "home-en": [
+    {
+      "id": 1,
+      "text": "Welcome"
+    },
+    {
+      "id": 2,
+      "text": [
+        "Zukhriddin Mekhrullaev",
+        "Web Developer",
+        "Freelancer",
+        "Web Designer"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "I live and create in London, UK."
+    },
+    {
+      "id": 4,
+      "text": "Hire me"
+    }
+  ],
+  "header-rus": [
+    {
+      "id": "/",
+      "linkName": "профиль"
+    },
+    {
+      "id": "/about",
+      "linkName": "кто я?"
+    },
+    {
+      "id": "/resume",
+      "linkName": "резюме"
+    },
+    {
+      "id": "/portfolio",
+      "linkName": "портфолио"
+    },
+    {
+      "id": "/contact",
+      "linkName": "контакт"
+    }
+  ],
+  "home-rus": [
+    {
+      "id": 1,
+      "text": "Добро пожаловать"
+    },
+    {
+      "id": 2,
+      "text": [
+        "Зухриддин Мехруллаев",
+        "Веб Разработчик",
+        "Фрилансер",
+        "Веб Дизайнер"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Живу и творю в Лондоне, Великобритания."
+    },
+    {
+      "id": 4,
+      "text": "Связаться"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Selena Gomez",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+    },
+    {
+      "id": 2,
+      "name": "Justin Bieber",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+    },
+    {
+      "id": 3,
+      "name": "Rihanna",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa volupaccusantium aspernatur error?"
+    },
+    {
+      "id": 4,
+      "name": "Drake",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+    },
+    {
+      "id": 5,
+      "name": "Travis Scott",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+    },
+    {
+      "id": 6,
+      "name": " Kendel Jener",
+      "position": "super director",
+      "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa voluptatibus ab reprehenderit illo necessitatibus explicabo vel neque officia facilis. Dolore voluptate quisquam labore corporis, a harum eos, esse perferendis vel tempore explicabo deserunt beatae, distinctio cupiditate accusantium aspernatur error?"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Diploma of Higher Education (DipHE)",
+      "location": "College of Law, Tashkent",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "September 2015",
+      "until": "September 2018"
+    },
+    {
+      "id": 2,
+      "name": "React/Redux full course",
+      "location": "Udemy, Online",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "March 2020",
+      "until": "January 2021"
+    },
+    {
+      "id": 3,
+      "name": "Bachelor's degree in Computing systems",
+      "location": "University of Ulster, London",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "January 2019",
+      "until": "September 2022"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "name": "Fron End Engineer",
+      "location": "Family business, Tashkent",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "2015",
+      "until": "2018"
+    },
+    {
+      "id": 2,
+      "name": "Web Developer",
+      "location": "Freelance, London",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "2020",
+      "until": "2022"
+    },
+    {
+      "id": 3,
+      "name": "UX/UI Designer, Web developer",
+      "location": "Portfolio project, London",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed tempora, officiis quam id, eum, dicta unde sequi culpa dignissimos eveniet laudantium iure explicabo veritatis temporibus consequuntur optio dolor! Harum, modi.",
+      "from": "2022",
+      "until": "2022"
+    }
+  ],
+  "languages": [
+    {
+      "id": 1,
+      "name": "English",
+      "level": 85,
+      "url": "./flags/ukFlag.png",
+      "greeting": "Hello, world!"
+    },
+    {
+      "id": 2,
+      "name": "Ukranian",
+      "level": 60,
+      "url": "./flags/ukrFlag.png",
+      "greeting": "Привіт Світ!"
+    },
+    {
+      "id": 3,
+      "name": "Uzbek",
+      "level": 100,
+      "url": "./flags/uzFlag.png",
+      "greeting": "Salom Dunyo!"
+    },
+    {
+      "id": 4,
+      "name": "Russian",
+      "level": 100,
+      "url": "./flags/rusFlag.png",
+      "greeting": "Привет, мир!"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "HTML5",
+      "level": 90
+    },
+    {
+      "id": 2,
+      "name": "CSS/SASS",
+      "level": 90
+    },
+    {
+      "id": 3,
+      "name": "React JS",
+      "level": 80
+    },
+    {
+      "id": 4,
+      "name": "JavaScript",
+      "level": 90
+    },
+    {
+      "id": 5,
+      "name": "Node JS",
+      "level": 70
+    },
+    {
+      "id": 6,
+      "name": "REST API",
+      "level": 70
+    },
+    {
+      "id": 7,
+      "name": "Redux",
+      "level": 80
+    },
+    {
+      "id": 8,
+      "name": "Python",
+      "level": 70
+    },
+    {
+      "id": 9,
+      "name": "Django",
+      "level": 60
+    },
+    {
+      "id": 10,
+      "name": "SwiftUI",
+      "level": 60
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "name": "Tennis"
+    },
+    {
+      "id": 2,
+      "name": "Driving"
+    },
+    {
+      "id": 3,
+      "name": "Camping"
+    },
+    {
+      "id": 4,
+      "name": "DIY"
+    }
+  ],
+  "messages": [
+    {
+      "id": "a-TwQHK3PSG--qoAlFEOX",
+      "name": "Zukhriddin Mekhrullaev",
+      "email": "zukhriddin853@gmail.com",
+      "subject": "Test",
+      "message": "Thanks for the fantastic work!"
+    }
+  ]
 }

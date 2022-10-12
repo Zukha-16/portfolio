@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../store";
 import { fetchHome, selectAll } from "./homeSlice";
-
+import { Link } from "react-router-dom";
 import RingLoader from "react-spinners/RingLoader";
 
 import "./Home.scss";
@@ -21,7 +21,7 @@ function Home() {
 
   const renderContent = (arr) => {
     if (arr.length === 0) {
-      return 
+      return;
     }
     const [h2Text, h1ArrText, pText, btnText] = arr;
     return (
@@ -42,7 +42,9 @@ function Home() {
           </span>
         </h1>
         <p>{pText.text}</p>
-        <button className="offset">{btnText.text}</button>
+        <Link to={'/contact'}>
+          <button className="offset">{btnText.text}</button>
+        </Link>
       </>
     );
   };

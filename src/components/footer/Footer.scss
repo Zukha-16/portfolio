@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    display: flex;
+    width: 100%;
+    background-color: $servicesbgColor;
+    height: 5rem;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+        font-size: 1rem;
+        color: $textColor;
+
+        span {
+            color: $baseColor;
+            white-space: pre-wrap;
+
+        }
+    }
+
+    div {
+        button {
+            background-color: transparent;
+            color: $textColor;
+            font-size: 1rem;
+            transition: all .5s ease;
+
+            &:hover {
+                cursor: pointer;
+                color: $baseColor;
+            }
+        }
+
+        button:nth-child(2) {
+            margin-left: 2rem;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                height: 100%;
+                width: 2px;
+                background-color: rgba($textColor, .5);
+                transform: translateX(-1rem);
+            }
+
+        }
+    }
+}
