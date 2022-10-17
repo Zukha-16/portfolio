@@ -2,65 +2,49 @@ import "./AboutServices.scss";
 import { AiFillHtml5 } from "react-icons/ai";
 import Skeleton from "../../skeleton/Skeleton";
 
-function AboutServices() {
+function AboutServices({ services }) {
+  const getServiceIcon = (name) => {
+    switch (name) {
+      case "Design trends":
+        return <AiFillHtml5 />;
+      default:
+        break;
+    }
+  };
+
   return (
     <Skeleton
       title="My services"
       subtitle="Services I offer to my clients"
       titleProsition="left"
     >
-          <div className="about_sevrices breaker">
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Officiis, consectetur.
-              </p>
-            </div>
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                ratione.
-              </p>
-            </div>
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga,
-                explicabo.
-              </p>
-            </div>
-          </div>
-          <div className="about_sevrices">
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Reiciendis, officiis.
-              </p>
-            </div>
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
-                magnam.
-              </p>
-            </div>
-            <div>
-              <AiFillHtml5 />
-              <h3>Design trends</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Tempora, quia!
-              </p>
-            </div>
-          </div>
+      <div className="about_sevrices breaker">
+        {services.map((service) => {
+          if (service.order % 2 === 0) {
+            return (
+              <div key={service.order}>
+                {getServiceIcon(service.name)}
+                <h3>{service.name}</h3>
+                <p>{service.description}</p>
+              </div>
+            );
+          }
+        })}
+      </div>
+
+      <div className="about_sevrices breaker">
+        {services.map((service) => {
+          if (service.order % 2 === 1) {
+            return (
+              <div key={service.order}>
+                {getServiceIcon(service.name)}
+                <h3>{service.name}</h3>
+                <p>{service.description}</p>
+              </div>
+            );
+          }
+        })}
+      </div>
     </Skeleton>
   );
 }

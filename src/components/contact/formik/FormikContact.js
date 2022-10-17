@@ -1,148 +1,87 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./FormikContact.scss";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useHttp } from "../../../hooks/http.hook";
-import { nanoid } from "@reduxjs/toolkit";
-function FormikContact() {
-  const [responseFromServer, setResponseFromServer] = useState("");
-  const [responseStatus, setResponseStatus] = useState("idle");
-  const { request } = useHttp();
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .min(2, "Please enter your full name...")
-        .required("Required!"),
-      email: Yup.string().email("Wrong email address...").required("Required!"),
-      subject: Yup.string().required("Please enter the subject!"),
-      message: Yup.string()
-        .min(5, "Your message must be more than 10 letters")
-        .required("Required!"),
-    }),
-    onSubmit: (values) => {
-      const newMessage = {
-        id: nanoid(),
-        name: values.name,
-        email: values.email,
-        subject: values.subject,
-        message: values.message,
-      };
-      request(
-        "http://localhost:3001/messages",
-        "POST",
-        JSON.stringify(newMessage)
-      )
-        .then(() => {
-          setResponseFromServer("Yor message has been sent succesfully!");
-          setResponseStatus("success");
-          const timerId = setTimeout(() => {
-            setResponseStatus("idle");
-            setResponseFromServer("");
-            console.log("back to norm");
-          }, 3000);
-          return () => {
-            clearInterval(timerId);
-          };
-        })
-        .catch((error) => {
-          setResponseFromServer(error.message);
-          setResponseStatus("error");
-        });
-      formik.resetForm();
-    },
-  });
+import emailjs from "@emailjs/browser";
 
+function FormikContact() {
+  const [response, setResponse] = useState("");
+  const [responseFromServer, setResponseFromServer] = useState("");
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_dgoifxv",
+        "template_jyjc72a",
+        form.current,
+        "Lad-679F1uZ9I10Gd"
+      )
+      .then(
+        () => {
+          setResponseFromServer("success");
+          setResponse("Your message has been sent succesfully!");
+          const timerId = setTimeout(() => {
+            setResponseFromServer("");
+            setResponse("");
+          }, 3000);
+          return () => clearInterval(timerId);
+        },
+        (error) => {
+          setResponseFromServer("error");
+          setResponse(`Something went wrong! ${error.text}`);
+          const timerId = setTimeout(() => {
+            setResponseFromServer("");
+            setResponse("");
+          }, 3000);
+          return () => clearInterval(timerId);
+        }
+      );
+  };
+  //
   return (
     <div className="formik_wrapper">
-      <form className="form" onSubmit={formik.handleSubmit}>
+      <form className="form" ref={form} onSubmit={sendEmail}>
         <h2
           style={
-            responseStatus === "success"
+            responseFromServer === "success"
               ? { color: "green" }
-              : responseStatus === "error"
+              : responseFromServer === "error"
               ? { color: "red" }
               : null
           }
         >
-          {responseFromServer === "" ? "Message me" : responseFromServer}
+          {response === "" ? "Message me" : response}
         </h2>
+
         <div className="formik_name_email">
           <div className="form_field">
             <input
-              id="name"
-              name="name"
+              required
+              name="user_name"
               type="text"
               placeholder="Full name"
-              {...formik.getFieldProps("name")}
-              style={
-                formik.errors.name && formik.touched.name
-                  ? { borderColor: "red" }
-                  : null
-              }
             />
-            {/* {formik.errors.name} */}
-            {formik.errors.name && formik.touched.name ? (
-              <div className="error">{formik.errors.name}</div>
-            ) : null}
           </div>
 
           <div className="form_field">
             <input
-              id="email"
-              name="email"
+              required
+              name="user_email"
               type="email"
               placeholder="Email address"
-              {...formik.getFieldProps("email")}
-              style={
-                formik.errors.email && formik.touched.email
-                  ? { borderColor: "red" }
-                  : null
-              }
             />
-            {formik.errors.email && formik.touched.email ? (
-              <div className="error">{formik.errors.email}</div>
-            ) : null}
           </div>
         </div>
 
         <div className="form_field">
-          <input
-            id="subject"
-            name="subject"
-            type="subject"
-            placeholder="Subject"
-            {...formik.getFieldProps("subject")}
-            style={
-              formik.errors.subject && formik.touched.subject
-                ? { borderColor: "red" }
-                : null
-            }
-          />
-          {formik.errors.subject && formik.touched.subject ? (
-            <div className="error">{formik.errors.subject}</div>
-          ) : null}
+          <input required name="subject" type="subject" placeholder="Subject" />
         </div>
         <div className="form_field ">
           <textarea
-            id="message"
+            required
             name="message"
             placeholder="Enter your message here..."
-            {...formik.getFieldProps("message")}
-            style={
-              formik.errors.message && formik.touched.message
-                ? { borderColor: "red" }
-                : null
-            }
           />
-          {formik.errors.message && formik.touched.message ? (
-            <div className="error message_error">{formik.errors.message}</div>
-          ) : null}
         </div>
         <button type="submit">Submit</button>
       </form>

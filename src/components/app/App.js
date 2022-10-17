@@ -2,6 +2,7 @@ import "./App.scss";
 
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import RingLoader from "react-spinners/RingLoader";
 
 const Header = lazy(() => import("../header/Header"));
@@ -10,6 +11,7 @@ const AboutPage = lazy(() => import("../pages/AboutPage"));
 const ResumePage = lazy(() => import("../pages/ResumePage"));
 const PortfolioPage = lazy(() => import("../pages/PortfolioPage"));
 const ContactPage = lazy(() => import("../pages/ContactPage"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 function App() {
   return (
@@ -33,7 +35,7 @@ function App() {
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            {/* <Route path="*" element={<Page404 />} /> */}
+            <Route path="test" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </div>

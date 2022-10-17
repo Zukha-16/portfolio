@@ -1,26 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import store from "../../../store";
-import { selectAll, fetchResumeSkills } from "./resumeSkillsSlice";
-
 import Skeleton from "../../skeleton/Skeleton";
-import RingLoader from "react-spinners/RingLoader";
 import "./ResumeSkills.scss";
 
-import React from "react";
 
-function ResumeSkills() {
-  const { resumeSkillsLoadingStatus } = useSelector(
-    (state) => state.resumeSkills
-  );
-  const dispatch = useDispatch();
-  const resumeSkills = selectAll(store.getState());
+function ResumeSkills({skills}) {
 
-  useEffect(() => {
-    dispatch(fetchResumeSkills());
-    // eslint-disable-next-line
-  }, []);
-  // console.log(resumeSkills);
   return (
     <Skeleton
       title="Skills"
@@ -29,12 +12,10 @@ function ResumeSkills() {
     >
       {" "}
       <div className="resume__skills">
-        {resumeSkillsLoadingStatus === "loading" ? (
-          <RingLoader color="rgb(228, 48, 63" />
-        ) : null}
-        {resumeSkills.map((skill) => {
+     
+        {skills.map((skill) => {
           return (
-            <div key={skill.id} className="skill_info">
+            <div key={skill.order} className="skill_info">
               <div className="skill_name">
                 <span>{skill.name}</span>
                 <span

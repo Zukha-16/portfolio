@@ -1,9 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { selectAll, fetchTestimonials } from "./testimonialsSlice";
+// import { useEffect } from "react";
 import Slider from "react-slick";
-import store from "../../../store";
-import RingLoader from "react-spinners/RingLoader";
+// import RingLoader from "react-spinners/RingLoader";
 import { FaUserCircle, FaQuoteRight } from "react-icons/fa";
 
 import Skeleton from "../../skeleton/Skeleton";
@@ -11,18 +8,7 @@ import "./AboutSlider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function AboutSlider() {
-  const { testimonialsLoadingStatus } = useSelector(
-    (state) => state.testimonials
-  );
-
-  const testimonials = selectAll(store.getState());
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchTestimonials());
-    // eslint-disable-next-line
-  }, []);
-
+function AboutSlider({ testimonials }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -41,13 +27,10 @@ function AboutSlider() {
       subtitle="What my clients think about me"
       titleProsition="left"
     >
-      {testimonialsLoadingStatus === "loading" ? (
-        <RingLoader color="rgb(228, 48, 63" />
-      ) : null}
       <Slider {...settings}>
-        {testimonials.map((person) => {
+        {testimonials.map((testimonial) => {
           return (
-            <div key={person.id} className="slider__container">
+            <div key={testimonial.name} className="slider__container">
               <div className="testimonial">
                 <div className="testimonial__content">
                   <div className="testimonial__content_person">
@@ -55,14 +38,14 @@ function AboutSlider() {
                       <FaUserCircle />
 
                       <div>
-                        <h4>{person.name}</h4>
-                        <h5>{person.position}</h5>
+                        <h4>{testimonial.name}</h4>
+                        <h5>{testimonial.position} </h5>
                       </div>
                     </div>
 
                     <FaQuoteRight className="quote__color" />
                   </div>
-                  <p>{person.comment}</p>
+                  <p>{testimonial.comment}</p>
                 </div>
               </div>
             </div>

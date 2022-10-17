@@ -1,60 +1,67 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchHeader,
-  selectAll,
-  activateLanguageChange,
-} from "../header/headerSlice";
-import store from "../../store";
-
+import { useEffect, useState } from "react";
+import sanityClient from "../../client";
 import { Link, NavLink } from "react-router-dom";
 
 import RingLoader from "react-spinners/RingLoader";
-
-import { FaGithub } from "react-icons/fa";
-import { BsInstagram, BsWhatsapp, BsGlobe2 } from "react-icons/bs";
-import { TbBrandTelegram } from "react-icons/tb";
-import headerImage from "../../assets/header-image.jpg";
-
+import { BsGlobe2 } from "react-icons/bs";
+import SocailMediaLinks from "../socailMediaLinks/SocailMediaLinks";
 import "./Header.scss";
 
 function Header() {
-  const { activeLanguage, homeLinksLoadingStatus } = useSelector(
-    (state) => state.header
-  );
-  const header = selectAll(store.getState());
-  const dispatch = useDispatch();
+  const [headerLinks, setHeaderLinks] = useState(null);
+  const [socialMedia, setSocialMedia] = useState(null);
+  const [author, setAuthor] = useState(null);
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchHeader(activeLanguage));
-    // eslint-disable-next-line
-  }, [activeLanguage]);
-
+    const request = async () => {
+      Promise.all([
+        await sanityClient
+          .fetch(`*[_type == "social_media_links"]{ className, url, order }`)
+          .then((response) =>
+            setSocialMedia(response.sort((a, b) => a.order - b.order))
+          ),
+        await sanityClient
+          .fetch(`*[_type == "header_links"]{ name, url, order }`)
+          .then((response) =>
+            setHeaderLinks(response.sort((a, b) => a.order - b.order))
+          ),
+        await sanityClient
+          .fetch(`*[_type == "author"]{ name, mainImage{asset->{url}} }`)
+          .then((response) => setAuthor(response)),
+      ])
+        .then(() => setLoading(false))
+        .catch((error) => console.log(error));
+    };
+    request();
+  }, []);
   return (
     <>
       <header className="sticky__header">
-        <div className="header__image">
-          <Link to={"/"} className="header__image-link">
-            <img src={headerImage} alt="brand logo" />
-          </Link>
-
-          <p>Zukhriddin Mekhrullaev</p>
-        </div>
+        {loading ? (
+          <RingLoader color={"rgb(70, 156, 107)"} />
+        ) : (
+          <div className="header__image">
+            <Link to={"/"} className="header__image-link">
+              <img src={author[0].mainImage.asset.url} alt="brand logo" />
+            </Link>
+            <p>{author[0].name}</p>
+          </div>
+        )}
         <div className="header__nav">
           <ul>
-            {homeLinksLoadingStatus === "loading" ? (
-              <RingLoader color="rgb(228, 48, 63" />
-            ) : null}
-            {header.map((item) => {
-              return (
-                <NavLink end key={item.id} to={item.id}>
-                  <li>
-                    {item.linkName.charAt(0).toUpperCase() +
-                      item.linkName.slice(1)}
-                  </li>
-                </NavLink>
-              );
-            })}
+            {loading ? (
+              <RingLoader color={"rgb(70, 156, 107)"} />
+            ) : (
+              headerLinks.map((link) => {
+                return (
+                  <NavLink end to={link.url} key={link.name}>
+                    <li>{link.name}</li>
+                  </NavLink>
+                );
+              })
+            )}
           </ul>
         </div>
         <div className="header__bottom">
@@ -63,47 +70,16 @@ function Header() {
       </header>
       <div className="header__social__media">
         <ul>
-          <li className="instagram">
-            <a href="https://www.instagram.com/zukhriddin_m/?hl=en">
-              <BsInstagram />
-            </a>
-          </li>
-          <li className="telegram">
-            <a href="https://t.me/zukriddin_mekhrullaev">
-              <TbBrandTelegram />
-            </a>
-          </li>
-          <li className="whatsapp">
-            <a href="https://wa.me/447851421816">
-              {" "}
-              <BsWhatsapp />
-            </a>
-          </li>
-          <li className="github">
-            <a href="https://github.com/Zukha-16">
-              <FaGithub />
-            </a>
-          </li>
+          {loading ? (
+            <RingLoader color={"rgb(70, 156, 107)"} />
+          ) : (
+            <SocailMediaLinks arr={socialMedia} />
+          )}
         </ul>
       </div>
       <div className="header__languages">
         <ul>
-          <li
-            className={activeLanguage === "en" ? "active" : null}
-            onClick={() => {
-              dispatch(activateLanguageChange("en"));
-            }}
-          >
-            EN
-          </li>
-          <li
-            className={activeLanguage === "rus" ? "active" : null}
-            onClick={() => {
-              dispatch(activateLanguageChange("rus"));
-            }}
-          >
-            RUS
-          </li>
+          <li className="active">EN</li>
         </ul>
         <BsGlobe2 />
       </div>

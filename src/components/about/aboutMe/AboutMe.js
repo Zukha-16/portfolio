@@ -1,12 +1,9 @@
-import { FaGithub } from "react-icons/fa";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
-import { TbBrandTelegram } from "react-icons/tb";
+import SocailMediaLinks from "../../socailMediaLinks/SocailMediaLinks";
+
 import Skeleton from "../../skeleton/Skeleton";
-import about from "../../../assets/about.png";
-import cv from "../../../assets/myCv.pdf";
 import "./AboutMe.scss";
 
-function AboutMe() {
+function AboutMe({ aboutMe, socialMedia }) {
   return (
     <Skeleton
       title="About me"
@@ -14,70 +11,44 @@ function AboutMe() {
       titleProsition="center"
     >
       <div className="about_me-description">
-        <img src={about} alt="me" />
+        <img
+          src={aboutMe[0].mainImage.asset.url}
+          alt={aboutMe[0].mainImage.alt}
+        />
         <div className="about_me-who_am_i">
-          <h3>Who am I?</h3>
-          <h2>
-            I am Zukhriddin Mekhrullaev, a creative UX/UI Designer, ambitious
-            Web Developer and just a Nice Person
-          </h2>
-          <p>
-            I am a freelancer based in the United Kingdom and i have been
-            building noteworthy UX/UI designs and websites for years, which
-            comply with the latest design trends. I help convert a vision and an
-            idea into meaningful and useful products. Having a sharp eye for
-            product evolution helps me prioritize tasks, iterate fast and
-            deliver faster.
-          </p>
+          <h3>{aboutMe[0].title}</h3>
+          <h2>{aboutMe[0].subTitle}</h2>
+          <p>{aboutMe[0].description}</p>
           <div className="about_me-summary">
             <div className="about_me-summary-inside">
               <ul>
                 <li>
-                  Name: <span>Zukhriddin Mekhrullaev</span>
+                  Name: <span>{aboutMe[0].li_name}</span>
                 </li>
                 <li>
-                  Age: <span>23 y.o.</span>
+                  Age: <span>{aboutMe[0].li_age} y.o.</span>
                 </li>
               </ul>
             </div>
             <div className="about_me-summary-inside">
               <ul>
                 <li>
-                  Email: <span className="span_email">zukhriddin853@gmail.com</span>
+                  Email:{" "}
+                  <span className="span_email">{aboutMe[0].li_email}</span>
                 </li>
                 <li>
-                  From: <span>Uzbekistan "I live in London"</span>
+                  From: <span>{aboutMe[0].li_from}</span>
                 </li>
               </ul>
             </div>
           </div>
           <div className="about_me-summary_cv">
-            <a href={cv} download>
+            <a href={aboutMe[0].cv.asset.url} download>
               <button type="button">Download my CV</button>
             </a>
             <p>or check out my social media</p>
             <ul>
-              <li className="instagram">
-                <a href="https://www.instagram.com/zukhriddin_m/?hl=en">
-                  <BsInstagram />
-                </a>
-              </li>
-              <li className="telegram">
-                <a href="https://t.me/zukriddin_mekhrullaev">
-                  <TbBrandTelegram />
-                </a>
-              </li>
-              <li className="whatsapp">
-                <a href="https://wa.me/447851421816">
-                  {" "}
-                  <BsWhatsapp />
-                </a>
-              </li>
-              <li className="github">
-                <a href="https://github.com/Zukha-16">
-                  <FaGithub />
-                </a>
-              </li>
+              <SocailMediaLinks arr={socialMedia} />
             </ul>
           </div>
         </div>
