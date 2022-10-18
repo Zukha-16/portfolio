@@ -1,15 +1,18 @@
 @import '../../../styles/variables.scss';
 
+
 .interests {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    gap: 2rem;
 }
 
 .interests_info {
-    width: 22%;
+    width: 100%;
     text-align: center;
     background-color: $servicesbgColor;
-    padding: 2rem 1rem;
+    padding: 1rem;
     transition: all .5s ease;
 
     svg {
@@ -40,4 +43,18 @@
     }
 
 
+}
+
+@media only screen and (min-width: 992px) {
+
+    .interests {
+        flex-direction: row;
+        gap: .5rem;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .interests {
+        gap: 1rem;
+    }
 }

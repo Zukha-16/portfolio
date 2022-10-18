@@ -1,12 +1,13 @@
 @import '../../../styles/variables.scss';
 
+
 .resume__skills {
     min-height: 100%;
     overflow: hidden;
 }
 
 .skill_info {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 0 1.5rem;
     padding-bottom: 2rem;
@@ -35,4 +36,11 @@
         width: 95%;
         background-color: $baseColor;
     }
+}
+
+@media only screen and (min-width: 992px) {
+    .skill_info {
+        width: 50%;
+    }
+
 }

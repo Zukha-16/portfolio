@@ -1,10 +1,10 @@
 import sanityClient from "../../client";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import RingLoader from "react-spinners/RingLoader";
-
-import "./Home.scss";
 import { Typewriter } from "react-simple-typewriter";
+
+import RingLoader from "react-spinners/RingLoader";
+import "./Home.scss";
 
 function Home() {
   const [homeContent, setHomeContent] = useState(null);
@@ -27,7 +27,6 @@ function Home() {
 
   return (
     <div className="home">
-      <div className="home__overlay"></div>
       <div className="home__content">
         {loading ? (
           <RingLoader color={"rgb(70, 156, 107)"} />
@@ -36,7 +35,7 @@ function Home() {
             <h2>{homeContent[0].title}</h2>
             <h1>
               Hi, I am
-              <span>
+              <span className="typewriter">
                 {" "}
                 <Typewriter
                   words={homeContent[0].typewriter}

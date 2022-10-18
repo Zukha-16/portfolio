@@ -1,6 +1,10 @@
-import "./AboutServices.scss";
 import { AiFillHtml5 } from "react-icons/ai";
 import Skeleton from "../../skeleton/Skeleton";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../aboutSlider/AboutSlider.scss";
+import "./AboutServices.scss";
 
 function AboutServices({ services }) {
   const getServiceIcon = (name) => {
@@ -12,39 +16,82 @@ function AboutServices({ services }) {
     }
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 4000,
+    cssEase: "linear",
+    arrows: false,
+  };
+
   return (
     <Skeleton
       title="My services"
       subtitle="Services I offer to my clients"
       titleProsition="left"
     >
-      <div className="about_sevrices breaker">
-        {services.map((service) => {
-          if (service.order % 2 === 0) {
+      {window.innerWidth < 992 ? (
+        <Slider {...settings}>
+          {services.map((service) => {
             return (
-              <div key={service.order}>
-                {getServiceIcon(service.name)}
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
+              <div key={service.order} className="slider__container">
+                <div className="service_inner_container">
+                  <div className="slider_wrapper">
+                    <div className="slider_title_container">
+                      <div className="slider_title">
+                        {getServiceIcon(service.name)}
+                        <div>
+                          <h4>
+                            {service.name}
+                            {service.order}
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                    <p>{service.description}</p>
+                  </div>
+                </div>
               </div>
             );
-          }
-        })}
-      </div>
-
-      <div className="about_sevrices breaker">
-        {services.map((service) => {
-          if (service.order % 2 === 1) {
-            return (
-              <div key={service.order}>
-                {getServiceIcon(service.name)}
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
-              </div>
-            );
-          }
-        })}
-      </div>
+          })}
+        </Slider>
+      ) : (
+        <>
+          {" "}
+          <div className="about_sevrices breaker">
+            {services.map((service) => {
+              if (service.order % 2 === 0) {
+                return (
+                  <div key={service.order}>
+                    {getServiceIcon(service.name)}
+                    <h3>{service.name}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+          <div className="about_sevrices breaker">
+            {services.map((service) => {
+              if (service.order % 2 === 1) {
+                return (
+                  <div key={service.order}>
+                    {getServiceIcon(service.name)}
+                    <h3>{service.name}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        </>
+      )}
     </Skeleton>
   );
 }

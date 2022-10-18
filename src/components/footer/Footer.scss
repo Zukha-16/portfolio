@@ -4,11 +4,15 @@
     display: flex;
     width: 100%;
     background-color: $servicesbgColor;
-    height: 5rem;
+    height: auto;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
     p {
+        order: 1;
         font-size: 1rem;
         color: $textColor;
 
@@ -20,6 +24,8 @@
     }
 
     div {
+        order: 0;
+
         button {
             background-color: transparent;
             color: $textColor;
@@ -50,6 +56,25 @@
         }
     }
 }
-.modal_opened{
+
+.modal_opened {
     overflow-y: hidden;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .footer {
+        gap: 0rem;
+        flex-direction: row;
+
+        p {
+            order: 0;
+        }
+
+        div {
+            order: 1;
+        }
+    }
+
+
 }

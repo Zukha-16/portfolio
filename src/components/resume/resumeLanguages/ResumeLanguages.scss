@@ -1,15 +1,20 @@
 @import '../../../styles/variables.scss';
 
+
 .languages {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-bottom: 2rem;
+    gap: 2rem;
 }
 
 .language_info {
-    width: 20%;
+    width: 100%;
     text-align: center;
+    background-color: $servicesbgColor;
+    padding: 1rem 0;
 
     h3 {
         font-size: 1.5rem;
@@ -79,5 +84,29 @@
 
     .progress-100 {
         border-color: $baseColor;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    .language_flag {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .languages {
+        flex-direction: row;
+        margin-bottom: 0rem;
+        gap: 0rem;
+    }
+
+    .language_info {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .language_flag {
+        width: 50%;
+
     }
 }

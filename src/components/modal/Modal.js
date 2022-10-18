@@ -1,74 +1,97 @@
 import { AiOutlineClose } from "react-icons/ai";
-import { createPortal } from "react-dom";
 import "./Modal.scss";
-function Modal({ option, clickHandler }) {
+import { Transition } from "react-transition-group";
 
-  const node = document.createElement("div");
-  document.body.appendChild(node);
+function Modal({ option, clickHandler, show }) {
+  const duration = 300;
+  const defaultStyle = {
+    transition: `all ${duration}ms ease-in-out`,
+    opacity: 1,
+    visibility: "hidden",
+  };
 
-  return createPortal(
-    <div
-      className="modal_container"
-      style={option ? { visibility: "visible" } : { visibility: "-hidden" }}
-      onClick={(e) => {clickHandler(e.target.className)}}
-    >
-      <div className="modal_wrapper">
-        <div className="modal_title">
-          <h2>{option === "terms" ? "Terms & Policy" : "Disclaimer"}</h2>
-          <button onClick={() => {clickHandler('btn')}}>
-            <AiOutlineClose />
-          </button>
+  const transitionStyles = {
+    entering: { opacity: 1, visibility: "visible" },
+    entered: { opacity: 1, visibility: "visible" },
+    exiting: { opacity: 0, visibility: "hidden" },
+    exited: { opacity: 0, visibility: "hidden" },
+  };
+  return (
+    <Transition in={show} timeout={duration} unmountOnExit>
+      {(state) => (
+        <div
+          className="modal_container"
+          style={{ ...defaultStyle, ...transitionStyles[state] }}
+          onClick={(e) => {
+            clickHandler(e.target.className);
+          }}
+        >
+          <div className="modal_wrapper">
+            <div className="modal_title">
+              <h2>
+                {option === "terms" ? "Terms & Policy" : null}
+                {option === "disclaimer" ? "Disclaimer" : null}
+              </h2>
+              <button
+                onClick={() => {
+                  clickHandler("btn");
+                }}
+              >
+                <AiOutlineClose />
+              </button>
+            </div>
+            <div className="modal_content">
+              {option === "terms" ? <Terms /> : null}
+              {option === "disclaimer" ? (
+                <>
+                  <p>
+                    Simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever
+                    since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type specimen book.
+                  </p>
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Cumque, deleniti!
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Consectetur accusantium voluptatum iste neque quae rerum!
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quod excepturi cum animi recusandae ut dignissimos
+                      corrupti atque aspernatur? Et, totam?
+                    </li>
+                    <li>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Amet, asperiores.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Suscipit quia rerum eos quo quisquam aut, cumque, quis sed
+                      quod architecto pariatur beatae magni doloribus molestias
+                      ducimus saepe ex ipsam sint.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Natus hic necessitatibus odio aperiam porro ex!
+                    </li>
+                  </ul>
+                </>
+              ) : null}
+            </div>
+          </div>
         </div>
-        <div className="modal_content">
-          {option === "terms" ? <Terms /> : <Disclaimer />}
-        </div>
-      </div>
-    </div>,
-    node
+      )}
+    </Transition>
   );
 }
 
-const Disclaimer = () => {
-  return (
-    <>
-      <p>
-        Simply dummy text of the printing and typesetting industry. Lorem Ipsum
-        has been the industry's standard dummy text ever since the 1500s, when
-        an unknown printer took a galley of type and scrambled it to make a type
-        specimen book.
-      </p>
-      <ul>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-          deleniti!
-        </li>
-        <li>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur
-          accusantium voluptatum iste neque quae rerum!
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-          excepturi cum animi recusandae ut dignissimos corrupti atque
-          aspernatur? Et, totam?
-        </li>
-        <li>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet,
-          asperiores.
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quia
-          rerum eos quo quisquam aut, cumque, quis sed quod architecto pariatur
-          beatae magni doloribus molestias ducimus saepe ex ipsam sint.
-        </li>
-        <li>Lorem ipsum dolor, sit amet consectetur adipisicing.</li>
-        <li>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus hic
-          necessitatibus odio aperiam porro ex!
-        </li>
-      </ul>
-    </>
-  );
-};
 const Terms = () => {
   return (
     <>

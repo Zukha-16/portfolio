@@ -20,6 +20,7 @@ function FormikContact() {
         () => {
           setResponseFromServer("success");
           setResponse("Your message has been sent succesfully!");
+          form.current.reset()
           const timerId = setTimeout(() => {
             setResponseFromServer("");
             setResponse("");
@@ -36,6 +37,7 @@ function FormikContact() {
           return () => clearInterval(timerId);
         }
       );
+      
   };
   //
   return (

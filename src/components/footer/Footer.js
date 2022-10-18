@@ -3,20 +3,22 @@ import { useState } from "react";
 import Modal from "../modal/Modal";
 
 function Footer() {
-  const [modalOption, setModalOption] = useState(undefined);
+  const [modalOption, setModalOption] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const modalOpenHandler = (option) => {
     setModalOption(option);
+    setShowModal(true);
     document.body.classList.add("modal_opened");
   };
 
   const clickHandler = (name) => {
     if (name === "modal_container") {
       document.body.classList.remove("modal_opened");
-      setModalOption(undefined);
+      setShowModal(false);
     } else if (name === "btn") {
       document.body.classList.remove("modal_opened");
-      setModalOption(undefined);
+      setShowModal(false);
     }
   };
   return (
@@ -32,7 +34,12 @@ function Footer() {
           Disclaimer
         </button>
       </div>
-      <Modal option={modalOption} clickHandler={clickHandler}></Modal>
+
+      <Modal
+        option={modalOption}
+        clickHandler={clickHandler}
+        show={showModal}
+      ></Modal>
     </footer>
   );
 }

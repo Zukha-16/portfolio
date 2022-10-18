@@ -6,7 +6,7 @@ function PortfolioPage() {
   return (
     <>
       <Portfolio />
-      <EmptySpaceFiller height={10}/>
+      <EmptySpaceFiller height={10} />
       <Footer />
     </>
   );

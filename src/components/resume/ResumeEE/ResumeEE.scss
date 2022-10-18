@@ -1,15 +1,18 @@
 @import '../../../styles/variables.scss';
 
+
 .resumeEE {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .resume__education,
 .resume__experience {
-    width: 47%;
     background-color: $servicesbgColor;
+    position: relative;
+    height: 100%;
 
     div {
         border-left: 5px solid $baseColor;
@@ -67,6 +70,54 @@
         }
 
 
+    }
+
+
+}
+
+.resume__education {
+    margin-bottom: 5rem;
+}
+
+.resume__education::after,
+.resume__experience::after {
+    text-decoration: underline;
+    color: white;
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.resume__education::after {
+    content: 'Education';
+}
+
+.resume__experience::after {
+    content: 'Experience';
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .resumeEE {
+        flex-direction: row;
+    }
+
+    .resume__education,
+    .resume__experience {
+        margin: 0 1rem;
+    }
+
+    .resume__education {
+        margin-bottom: 0rem;
+
+    }
+    .resume__education::after,
+    .resume__experience::after {
+
+        text-align: left;
     }
 
 

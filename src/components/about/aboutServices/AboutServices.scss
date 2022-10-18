@@ -1,16 +1,16 @@
 @import '../../../styles/variables.scss';
 
-.about_sevrices{
+
+.about_sevrices {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  gap: 1rem;
 
   div {
     padding: 2rem;
-    width: 30%;
     background-color: $servicesbgColor;
-    
 
     svg {
       font-size: $svgIconsInServices;
@@ -29,6 +29,16 @@
     }
   }
 }
-.breaker{
-  margin-bottom: 3rem;
+
+.breaker {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .about_sevrices {
+    flex-direction: row;
+  }
+  .breaker {
+    margin-bottom: 2rem;
+  }
 }

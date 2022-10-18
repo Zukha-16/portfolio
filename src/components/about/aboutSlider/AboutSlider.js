@@ -1,6 +1,4 @@
-// import { useEffect } from "react";
 import Slider from "react-slick";
-// import RingLoader from "react-spinners/RingLoader";
 import { FaUserCircle, FaQuoteRight } from "react-icons/fa";
 
 import Skeleton from "../../skeleton/Skeleton";
@@ -9,10 +7,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function AboutSlider({ testimonials }) {
+
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: window.innerWidth < 992 ? 1 : 2,
     slidesToScroll: 1,
     autoplay: true,
     speed: 500,
@@ -31,10 +30,10 @@ function AboutSlider({ testimonials }) {
         {testimonials.map((testimonial) => {
           return (
             <div key={testimonial.name} className="slider__container">
-              <div className="testimonial">
-                <div className="testimonial__content">
-                  <div className="testimonial__content_person">
-                    <div className="testimonial__person_name">
+              <div className="testimonial_inner_container">
+                <div className="slider_wrapper">
+                  <div className="slider_title_container">
+                    <div className="slider_title">
                       <FaUserCircle />
 
                       <div>

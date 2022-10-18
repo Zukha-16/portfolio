@@ -2,7 +2,7 @@ import "./App.scss";
 
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
 
 const Header = lazy(() => import("../header/Header"));
@@ -14,9 +14,10 @@ const ContactPage = lazy(() => import("../pages/ContactPage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 function App() {
+  const [burgerMenu, setBurgerMenu] = useState(false);
   return (
     <Router>
-      <Header />
+      <Header burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu} />
       <div className="container">
         <Suspense
           fallback={
@@ -35,7 +36,7 @@ function App() {
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="test" element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </div>

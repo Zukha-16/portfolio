@@ -1,32 +1,37 @@
 @import '../../../styles/variables.scss';
 
-
 .about_me-description {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   img {
-    max-width: 400px;
+    margin: 0 auto;
+    margin-top: -2rem;
+    width: 100%;
+    max-width: 350px;
   }
 
 
   .about_me-who_am_i {
-    width: 68%;
-    text-align: left;
+    margin-top: 3rem;
+    width: 100%;
+    text-align: center;
 
     h3 {
       color: $baseColor;
-      font-size: $subTitle;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: $smallTitle;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
       line-height: 1.2;
+      margin-bottom: 2rem;
     }
 
     p {
+      margin-top: 0;
       line-height: 1.5;
       letter-spacing: 1px;
     }
@@ -37,10 +42,11 @@
   border-top: 1px solid rgba(168, 168, 168, 0.5);
   padding-top: 1rem;
   display: flex;
+  flex-direction: column;
   width: 100%;
 
   .about_me-summary-inside {
-    width: 50%;
+    text-align: left;
 
     ul {
       li {
@@ -64,10 +70,12 @@
 
 .about_me-summary_cv {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: auto;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  gap: 1rem;
 
   button {
     background: none;
@@ -129,5 +137,13 @@
         color: $githubColor;
       }
     }
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .about_me-summary_cv {
+    margin-top: 3rem;
+    gap: 1.5rem;
   }
 }

@@ -6,8 +6,7 @@ import RingLoader from "react-spinners/RingLoader";
 import { BsGlobe2 } from "react-icons/bs";
 import SocailMediaLinks from "../socailMediaLinks/SocailMediaLinks";
 import "./Header.scss";
-
-function Header() {
+function Header({ burgerMenu, setBurgerMenu }) {
   const [headerLinks, setHeaderLinks] = useState(null);
   const [socialMedia, setSocialMedia] = useState(null);
   const [author, setAuthor] = useState(null);
@@ -36,14 +35,23 @@ function Header() {
     };
     request();
   }, []);
+
   return (
     <>
-      <header className="sticky__header">
+      <header
+        className={`sticky__header ${burgerMenu === true ? "active" : null}`}
+      >
         {loading ? (
           <RingLoader color={"rgb(70, 156, 107)"} />
         ) : (
           <div className="header__image">
-            <Link to={"/"} className="header__image-link">
+            <Link
+              to={"/"}
+              className="header__image-link"
+              onClick={() => {
+                setBurgerMenu(false);
+              }}
+            >
               <img src={author[0].mainImage.asset.url} alt="brand logo" />
             </Link>
             <p>{author[0].name}</p>
@@ -56,7 +64,14 @@ function Header() {
             ) : (
               headerLinks.map((link) => {
                 return (
-                  <NavLink end to={link.url} key={link.name}>
+                  <NavLink
+                    end
+                    to={link.url}
+                    key={link.name}
+                    onClick={() => {
+                      setBurgerMenu(false);
+                    }}
+                  >
                     <li>{link.name}</li>
                   </NavLink>
                 );
@@ -82,6 +97,16 @@ function Header() {
           <li className="active">EN</li>
         </ul>
         <BsGlobe2 />
+      </div>
+      <div
+        className={`header_burger_menu ${
+          burgerMenu === true ? "active" : null
+        }`}
+        onClick={() => {
+          setBurgerMenu(!burgerMenu);
+        }}
+      >
+        <button className={burgerMenu === true ? "active" : null}></button>
       </div>
     </>
   );
