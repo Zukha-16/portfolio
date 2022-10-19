@@ -42,7 +42,9 @@ function Header({ burgerMenu, setBurgerMenu }) {
         className={`sticky__header ${burgerMenu === true ? "active" : null}`}
       >
         {loading ? (
-          <RingLoader color={"rgb(70, 156, 107)"} />
+          <div className="ring_loader">
+            <RingLoader color={"rgb(70, 156, 107)"} />
+          </div>
         ) : (
           <div className="header__image">
             <Link
@@ -60,7 +62,9 @@ function Header({ burgerMenu, setBurgerMenu }) {
         <div className="header__nav">
           <ul>
             {loading ? (
-              <RingLoader color={"rgb(70, 156, 107)"} />
+              <div className="ring_loader">
+                <RingLoader color={"rgb(70, 156, 107)"} />
+              </div>
             ) : (
               headerLinks.map((link) => {
                 return (
@@ -86,7 +90,9 @@ function Header({ burgerMenu, setBurgerMenu }) {
       <div className="header__social__media">
         <ul>
           {loading ? (
-            <RingLoader color={"rgb(70, 156, 107)"} />
+            <div className="ring_loader">
+              <RingLoader color={"rgb(70, 156, 107)"} />
+            </div>
           ) : (
             <SocailMediaLinks arr={socialMedia} />
           )}

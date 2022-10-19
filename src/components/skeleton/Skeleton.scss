@@ -25,7 +25,7 @@
 
     h2 {
         font-size: $bigTitle;
-        font-weight: 700;
+        font-weight: 500;
         margin-bottom: 5rem;
     }
 }
@@ -47,53 +47,14 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
-
-    .content__layout {
-        height: 100%;
-        background-color: $bgColor;
-    }
-
+@media only screen and (min-width: 1200px) {
     .content__container {
+        max-width: 95%;
+    }
+}
 
-        text-align: center;
+@media only screen and (min-width: 1441px) {
+    .content__container {
         max-width: 1440px;
-        margin: 0 auto;
-        padding: 1rem;
-        color: $textColor;
-    }
-
-    .minHeight {
-        min-height: 100vh;
-    }
-
-    .skeleton {
-        p {
-            margin-top: 5rem;
-            color: rgba($textColor, .65);
-        }
-
-        h2 {
-            font-size: $bigTitle;
-            font-weight: 700;
-            margin-bottom: 5rem;
-        }
-    }
-
-    .center {
-        text-align: center;
-
-        p {
-            margin-bottom: 2rem;
-        }
-
-    }
-
-    .left {
-        text-align: left;
-
-        p {
-            margin-bottom: 1rem;
-        }
     }
 }

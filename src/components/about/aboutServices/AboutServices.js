@@ -42,13 +42,10 @@ function AboutServices({ services }) {
                 <div className="service_inner_container">
                   <div className="slider_wrapper">
                     <div className="slider_title_container">
-                      <div className="slider_title">
+                      <div className="slider_title service_logo">
                         {getServiceIcon(service.name)}
                         <div>
-                          <h4>
-                            {service.name}
-                            {service.order}
-                          </h4>
+                          <h4>{service.name}</h4>
                         </div>
                       </div>
                     </div>

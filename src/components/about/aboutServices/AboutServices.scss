@@ -29,7 +29,11 @@
     }
   }
 }
-
+.service_logo{
+  svg{
+    color: $baseColor;
+  }
+}
 .breaker {
   margin-bottom: 1rem;
 }

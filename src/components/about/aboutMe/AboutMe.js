@@ -4,6 +4,7 @@ import Skeleton from "../../skeleton/Skeleton";
 import "./AboutMe.scss";
 
 function AboutMe({ aboutMe, socialMedia }) {
+  console.log(window.innerWidth)
   return (
     <Skeleton
       title="About me"
@@ -11,10 +12,12 @@ function AboutMe({ aboutMe, socialMedia }) {
       titleProsition="center"
     >
       <div className="about_me-description">
+        <div className="about_me_img">
         <img
           src={aboutMe[0].mainImage.asset.url}
           alt={aboutMe[0].mainImage.alt}
         />
+        </div>
         <div className="about_me-who_am_i">
           <h3>{aboutMe[0].title}</h3>
           <h2>{aboutMe[0].subTitle}</h2>

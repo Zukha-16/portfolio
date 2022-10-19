@@ -64,7 +64,9 @@ function ResumePage() {
   }, []);
 
   return loading ? (
-    <RingLoader color={"rgb(70, 156, 107)"} />
+    <div className="ring_loader">
+      <RingLoader color={"rgb(70, 156, 107)"} />
+    </div>
   ) : (
     <>
       <ResumeEE education={education} experience={experience} />

@@ -21,13 +21,9 @@ function App() {
       <div className="container">
         <Suspense
           fallback={
-            <RingLoader
-              color="rgb(228, 48, 63"
-              cssOverride={{
-                position: "fixed",
-                transform: "translate(75vh, 50vh)",
-              }}
-            />
+            <div className="ring_loader">
+              <RingLoader color={"rgb(70, 156, 107)"} />
+            </div>
           }
         >
           <Routes>

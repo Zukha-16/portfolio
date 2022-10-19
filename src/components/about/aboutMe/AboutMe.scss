@@ -147,3 +147,45 @@
     gap: 1.5rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+
+
+  .about_me-description {
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+      margin: 0 auto;
+      max-width: 450px;
+    }
+
+    .about_me-who_am_i {
+      margin: 0;
+      width: 68%;
+    }
+  }
+
+  .about_me_img {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_me-summary {
+    margin-top: 0rem;
+    gap: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .about_me-summary_cv {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0rem;
+  }
+}

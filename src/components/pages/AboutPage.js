@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import sanityClient from "../../client";
-
 import AboutMe from "../about/aboutMe/AboutMe";
 import AboutServices from "../about/aboutServices/AboutServices";
 import AboutSlider from "../about/aboutSlider/AboutSlider";
@@ -50,7 +49,9 @@ function AboutPage() {
   return (
     <>
       {loading ? (
-        <RingLoader color={"rgb(70, 156, 107)"} />
+        <div className="ring_loader">
+          <RingLoader color={"rgb(70, 156, 107)"} />
+        </div>
       ) : (
         <>
           <AboutMe aboutMe={aboutMe} socialMedia={socialMedia} />

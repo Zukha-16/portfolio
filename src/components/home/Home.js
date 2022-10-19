@@ -20,7 +20,7 @@ function Home() {
           setLoading(false);
           setHomeContent(response);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error, 'asd'));
     };
     request();
   }, []);
