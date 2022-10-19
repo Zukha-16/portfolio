@@ -19,7 +19,7 @@ function AboutServices({ services }) {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: window.innerWidth > 768 ? 2 : 1,
+    slidesToShow: window.innerWidth > 550 ? 2 : 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 500,
