@@ -6,7 +6,7 @@ function ContactPage() {
   return (
     <>
       <Contact />
-      <EmptySpaceFiller height={0} minHeight={true} />
+      <EmptySpaceFiller height={3} minHeight={true} />
       <Footer />
     </>
   );
