@@ -30,7 +30,7 @@ function Footer() {
         <button onClick={() => modalOpenHandler("terms")}>
           Terms & Policy
         </button>
-        <button onClick={() => modalOpenHandler("disclaimer")}>
+        <button className="second_btn" onClick={() => modalOpenHandler("disclaimer")}>
           Disclaimer
         </button>
       </div>

@@ -2,7 +2,6 @@ import sanityClient from "../../client";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-
 import RingLoader from "react-spinners/RingLoader";
 import "./Home.scss";
 
@@ -20,7 +19,7 @@ function Home() {
           setLoading(false);
           setHomeContent(response);
         })
-        .catch((error) => console.log(error, 'asd'));
+        .catch((error) => console.log(error));
     };
     request();
   }, []);

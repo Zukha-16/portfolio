@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,8 @@
 }
 
 .modal_wrapper {
-    max-width: 50%;
+    position: relative;
+    max-width: 95%;
     height: auto;
     max-height: 80vh;
     background-color: $servicesbgColor;
@@ -63,11 +64,21 @@
 }
 
 .modal_title {
+    width: 95%;
+    position: fixed;
+    background-color: $servicesbgColor;
     border-bottom: 1px solid silver;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    h2 {
+        font-weight: 500;
+
+    }
 
     button {
         background-color: transparent;
@@ -80,6 +91,7 @@
 
         &:hover {
             svg {
+
                 color: $baseColor;
             }
         }
@@ -89,6 +101,7 @@
 }
 
 .modal_content {
+    margin-top: 4rem;
     padding: 1rem 2rem;
 
     h3,
@@ -104,23 +117,34 @@
             margin-left: 2rem;
         }
     }
+}
 
-    ul {
-        li {
-            position: relative;
+@media only screen and (min-width: 768px) {
+    .modal_wrapper {
+        max-width: 75%;
+    }
 
-            &::before {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                margin: auto 0;
-                left: -1.5rem;
-                content: '';
-                height: 10px;
-                width: 10px;
-                background-color: rgba($textColor, .8);
-                border-radius: 50%;
-            }
-        }
+    .modal_title {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal_wrapper {
+        max-width: 60%;
+    }
+
+    .modal_title {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .modal_wrapper {
+        max-width: 50%;
+    }
+
+    .modal_title {
+        width: 50%;
     }
 }

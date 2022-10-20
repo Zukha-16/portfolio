@@ -50,7 +50,7 @@ function Modal({ option, clickHandler, show }) {
                     since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book.
                   </p>
-                  <ul>
+                  <ol>
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Cumque, deleniti!
@@ -81,7 +81,7 @@ function Modal({ option, clickHandler, show }) {
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Natus hic necessitatibus odio aperiam porro ex!
                     </li>
-                  </ul>
+                  </ol>
                 </>
               ) : null}
             </div>
