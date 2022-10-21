@@ -1,4 +1,9 @@
+import {GrHostMaintenance} from 'react-icons/gr'
 import { AiFillHtml5 } from "react-icons/ai";
+import { FaReact } from "react-icons/fa";
+import {SiGoogleoptimize} from 'react-icons/si'
+import {MdOutlineDesignServices} from 'react-icons/md'
+import {BsArrowsMove} from 'react-icons/bs'
 import Skeleton from "../../skeleton/Skeleton";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,8 +14,19 @@ import "./AboutServices.scss";
 function AboutServices({ services }) {
   const getServiceIcon = (name) => {
     switch (name) {
-      case "Design trends":
+      case "Web App Development":
         return <AiFillHtml5 />;
+      case "Technical SEO":
+        return <SiGoogleoptimize/>;
+      case "UI UX Design":
+        return <MdOutlineDesignServices />;
+      case "Support and Maintenance":
+        return <GrHostMaintenance />;
+      case "Migration To React":
+        return <FaReact />;
+      case "Fully responsive":
+        return <BsArrowsMove />;
+
       default:
         break;
     }
@@ -23,7 +39,7 @@ function AboutServices({ services }) {
     slidesToScroll: 1,
     autoplay: true,
     speed: 500,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3700,
     cssEase: "linear",
     arrows: false,
   };
@@ -63,7 +79,7 @@ function AboutServices({ services }) {
             {services.map((service) => {
               if (service.order % 2 === 0) {
                 return (
-                  <div key={service.order}>
+                  <div key={service.order} className='service_logo'>
                     {getServiceIcon(service.name)}
                     <h3>{service.name}</h3>
                     <p>{service.description}</p>
@@ -77,7 +93,7 @@ function AboutServices({ services }) {
             {services.map((service) => {
               if (service.order % 2 === 1) {
                 return (
-                  <div key={service.order}>
+                  <div key={service.order} className='service_logo'>
                     {getServiceIcon(service.name)}
                     <h3>{service.name}</h3>
                     <p>{service.description}</p>

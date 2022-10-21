@@ -1,7 +1,7 @@
 import { MdSportsTennis } from "react-icons/md";
 import { IoCarSportSharp } from "react-icons/io5";
-import { GiCampingTent } from "react-icons/gi";
 import { MdConstruction } from "react-icons/md";
+import {CgGym} from 'react-icons/cg'
 import Skeleton from "../../skeleton/Skeleton";
 import "./ResumeInterests.scss";
 
@@ -9,7 +9,7 @@ function ResumeInterests({ interests }) {
   const interestsIcons = {
     tennis: <MdSportsTennis />,
     driving: <IoCarSportSharp />,
-    camping: <GiCampingTent />,
+    gym: <CgGym />,
     diy: <MdConstruction />,
   };
 
@@ -25,10 +25,6 @@ function ResumeInterests({ interests }) {
             <div key={interest.order} className="interests_info">
               {interestsIcons[interest.name.toLowerCase()]}
               <h3>{interest.name}</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo,
-                numquam.
-              </p>
             </div>
           );
         })}

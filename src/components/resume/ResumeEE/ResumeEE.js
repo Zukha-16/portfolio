@@ -11,7 +11,8 @@ function ResumeEE({ education, experience }) {
               <div key={item.order}>
                 <h2>{item.name}</h2>
                 <h3>
-                  {item.location} / {item.fromDate} - {item.untillDate}
+                  {item.location} / {item.fromDate.slice(0, 4)} -{" "}
+                  {item.untillDate.slice(0, 4)}
                 </h3>
                 <p>{item.description}</p>
                 <span></span>
@@ -25,7 +26,8 @@ function ResumeEE({ education, experience }) {
               <div key={item.order}>
                 <h2>{item.name}</h2>
                 <h3>
-                  {item.location} / {item.fromDate} - {item.untillDate}
+                  {item.location} / {item.fromDate.slice(0, 4)} -{" "}
+                  {item.untillDate.slice(0, 4)}
                 </h3>
                 <p>{item.description}</p>
                 <span></span>

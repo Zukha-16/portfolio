@@ -12,11 +12,6 @@
     padding: 2rem;
     background-color: $servicesbgColor;
 
-    svg {
-      font-size: $svgIconsInServices;
-      color: $baseColor;
-    }
-
     h3 {
       margin: 1rem 0;
       font-size: $subTitle;
@@ -29,11 +24,18 @@
     }
   }
 }
-.service_logo{
-  svg{
+
+.service_logo {
+  svg {
+    font-size: $svgIconsInServices;
     color: $baseColor;
+
+    path {
+      stroke: $baseColor;
+    }
   }
 }
+
 .breaker {
   margin-bottom: 1rem;
 }
@@ -41,7 +43,12 @@
 @media only screen and (min-width: 992px) {
   .about_sevrices {
     flex-direction: row;
+
+    div {
+      max-width: 33%;
+    }
   }
+
   .breaker {
     margin-bottom: 2rem;
   }
